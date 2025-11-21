@@ -1,5 +1,5 @@
 import { useNavigate, useLocation } from "react-router-dom";
-import { LayoutDashboard, BarChart3, Users, Settings, LogOut, Target } from "lucide-react";
+import { LayoutDashboard, BarChart3, Users, Settings, LogOut, Target, FileText } from "lucide-react";
 import { NavLink } from "@/components/NavLink";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
@@ -20,6 +20,7 @@ const menuItems = [
   { title: "Campaigns", url: "/dashboard/campaigns", icon: Target },
   { title: "Analytics", url: "/dashboard/analytics", icon: BarChart3 },
   { title: "Community", url: "/dashboard/community", icon: Users },
+  { title: "Website Content", url: "/dashboard/content", icon: FileText },
   { title: "Settings", url: "/dashboard/settings", icon: Settings },
 ];
 
