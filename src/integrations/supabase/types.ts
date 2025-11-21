@@ -14,6 +14,102 @@ export type Database = {
   }
   public: {
     Tables: {
+      focus_areas: {
+        Row: {
+          description: string
+          display_order: number
+          hashtags: string[] | null
+          id: string
+          image_url: string | null
+          slug: string
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          description: string
+          display_order: number
+          hashtags?: string[] | null
+          id?: string
+          image_url?: string | null
+          slug: string
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          description?: string
+          display_order?: number
+          hashtags?: string[] | null
+          id?: string
+          image_url?: string | null
+          slug?: string
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      hero_content: {
+        Row: {
+          cta_primary_link: string | null
+          cta_primary_text: string | null
+          cta_secondary_link: string | null
+          cta_secondary_text: string | null
+          hero_image_url: string | null
+          id: string
+          subtitle: string
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          cta_primary_link?: string | null
+          cta_primary_text?: string | null
+          cta_secondary_link?: string | null
+          cta_secondary_text?: string | null
+          hero_image_url?: string | null
+          id?: string
+          subtitle: string
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          cta_primary_link?: string | null
+          cta_primary_text?: string | null
+          cta_secondary_link?: string | null
+          cta_secondary_text?: string | null
+          hero_image_url?: string | null
+          id?: string
+          subtitle?: string
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      impact_metrics: {
+        Row: {
+          display_order: number
+          growth_percentage: string
+          id: string
+          label: string
+          updated_at: string
+          value: string
+        }
+        Insert: {
+          display_order: number
+          growth_percentage: string
+          id?: string
+          label: string
+          updated_at?: string
+          value: string
+        }
+        Update: {
+          display_order?: number
+          growth_percentage?: string
+          id?: string
+          label?: string
+          updated_at?: string
+          value?: string
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           avatar_url: string | null
@@ -41,6 +137,63 @@ export type Database = {
           id?: string
           role?: string | null
           updated_at?: string | null
+        }
+        Relationships: []
+      }
+      stats_cards: {
+        Row: {
+          display_order: number
+          icon: string
+          id: string
+          label: string
+          updated_at: string
+          value: string
+        }
+        Insert: {
+          display_order: number
+          icon: string
+          id?: string
+          label: string
+          updated_at?: string
+          value: string
+        }
+        Update: {
+          display_order?: number
+          icon?: string
+          id?: string
+          label?: string
+          updated_at?: string
+          value?: string
+        }
+        Relationships: []
+      }
+      testimonials: {
+        Row: {
+          author_name: string
+          author_title: string
+          display_order: number
+          id: string
+          organization: string
+          quote: string
+          updated_at: string
+        }
+        Insert: {
+          author_name: string
+          author_title: string
+          display_order: number
+          id?: string
+          organization: string
+          quote: string
+          updated_at?: string
+        }
+        Update: {
+          author_name?: string
+          author_title?: string
+          display_order?: number
+          id?: string
+          organization?: string
+          quote?: string
+          updated_at?: string
         }
         Relationships: []
       }
