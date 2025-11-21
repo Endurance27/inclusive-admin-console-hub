@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
+
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
@@ -135,9 +135,10 @@ export default function WebsiteContent() {
             <CardContent className="space-y-4">
               <div>
                 <Label>Title</Label>
-                <Input
+                <Textarea
                   value={heroContent?.title || ""}
                   onChange={(e) => setHeroContent({ ...heroContent, title: e.target.value })}
+                  rows={2}
                 />
               </div>
               <div>
@@ -151,16 +152,18 @@ export default function WebsiteContent() {
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <Label>Primary Button Text</Label>
-                  <Input
+                  <Textarea
                     value={heroContent?.cta_primary_text || ""}
                     onChange={(e) => setHeroContent({ ...heroContent, cta_primary_text: e.target.value })}
+                    rows={2}
                   />
                 </div>
                 <div>
                   <Label>Secondary Button Text</Label>
-                  <Input
+                  <Textarea
                     value={heroContent?.cta_secondary_text || ""}
                     onChange={(e) => setHeroContent({ ...heroContent, cta_secondary_text: e.target.value })}
+                    rows={2}
                   />
                 </div>
               </div>
@@ -179,24 +182,26 @@ export default function WebsiteContent() {
                 <div key={stat.id} className="grid grid-cols-2 gap-4 p-4 border rounded-lg">
                   <div>
                     <Label>Label</Label>
-                    <Input
+                    <Textarea
                       value={stat.label}
                       onChange={(e) => {
                         const newStats = [...stats];
                         newStats[idx].label = e.target.value;
                         setStats(newStats);
                       }}
+                      rows={2}
                     />
                   </div>
                   <div>
                     <Label>Value</Label>
-                    <Input
+                    <Textarea
                       value={stat.value}
                       onChange={(e) => {
                         const newStats = [...stats];
                         newStats[idx].value = e.target.value;
                         setStats(newStats);
                       }}
+                      rows={2}
                     />
                   </div>
                 </div>
@@ -216,35 +221,38 @@ export default function WebsiteContent() {
                 <div key={metric.id} className="grid grid-cols-3 gap-4 p-4 border rounded-lg">
                   <div>
                     <Label>Label</Label>
-                    <Input
+                    <Textarea
                       value={metric.label}
                       onChange={(e) => {
                         const newMetrics = [...metrics];
                         newMetrics[idx].label = e.target.value;
                         setMetrics(newMetrics);
                       }}
+                      rows={2}
                     />
                   </div>
                   <div>
                     <Label>Value</Label>
-                    <Input
+                    <Textarea
                       value={metric.value}
                       onChange={(e) => {
                         const newMetrics = [...metrics];
                         newMetrics[idx].value = e.target.value;
                         setMetrics(newMetrics);
                       }}
+                      rows={2}
                     />
                   </div>
                   <div>
                     <Label>Growth %</Label>
-                    <Input
+                    <Textarea
                       value={metric.growth_percentage}
                       onChange={(e) => {
                         const newMetrics = [...metrics];
                         newMetrics[idx].growth_percentage = e.target.value;
                         setMetrics(newMetrics);
                       }}
+                      rows={2}
                     />
                   </div>
                 </div>
@@ -264,13 +272,14 @@ export default function WebsiteContent() {
                 <div key={area.id} className="space-y-4 p-4 border rounded-lg">
                   <div>
                     <Label>Title</Label>
-                    <Input
+                    <Textarea
                       value={area.title}
                       onChange={(e) => {
                         const newAreas = [...focusAreas];
                         newAreas[idx].title = e.target.value;
                         setFocusAreas(newAreas);
                       }}
+                      rows={2}
                     />
                   </div>
                   <div>
@@ -282,7 +291,7 @@ export default function WebsiteContent() {
                         newAreas[idx].description = e.target.value;
                         setFocusAreas(newAreas);
                       }}
-                      rows={2}
+                      rows={3}
                     />
                   </div>
                 </div>
@@ -315,35 +324,38 @@ export default function WebsiteContent() {
                   <div className="grid grid-cols-3 gap-4">
                     <div>
                       <Label>Author Name</Label>
-                      <Input
+                      <Textarea
                         value={testimonial.author_name}
                         onChange={(e) => {
                           const newTestimonials = [...testimonials];
                           newTestimonials[idx].author_name = e.target.value;
                           setTestimonials(newTestimonials);
                         }}
+                        rows={2}
                       />
                     </div>
                     <div>
                       <Label>Author Title</Label>
-                      <Input
+                      <Textarea
                         value={testimonial.author_title}
                         onChange={(e) => {
                           const newTestimonials = [...testimonials];
                           newTestimonials[idx].author_title = e.target.value;
                           setTestimonials(newTestimonials);
                         }}
+                        rows={2}
                       />
                     </div>
                     <div>
                       <Label>Organization</Label>
-                      <Input
+                      <Textarea
                         value={testimonial.organization}
                         onChange={(e) => {
                           const newTestimonials = [...testimonials];
                           newTestimonials[idx].organization = e.target.value;
                           setTestimonials(newTestimonials);
                         }}
+                        rows={2}
                       />
                     </div>
                   </div>
